@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjeev Shakya — Video Editor, Photographer & Designer</title>
+<meta name="description" content="Sanjeev Shakya — video editor, photographer and designer based in Bhaktapur, Nepal. Premiere Pro, After Effects, DaVinci Resolve, Photoshop, Illustrator, Figma. Open to opportunities.">
+<meta property="og:title" content="Sanjeev Shakya — Multimedia Creator">
+<meta property="og:description" content="Video editing, photography and design from Bhaktapur, Nepal. Open to opportunities.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="sanjeev.jpg">
+<meta name="theme-color" content="#111214">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23100e0c'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23e2462f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#111214; --bg2:#17181b; --bg3:#1e1f23; --line:#2a2c30;
+    --ink:#eeece8; --muted:#9d9fa4; --rec:#e2462f; --amber:#e9b25a; --ok:#7bc47f;
+    --serif:'Fraunces',Georgia,serif; --mono:'IBM Plex Mono',ui-monospace,monospace; --sans:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:70px}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  [hidden]{display:none !important}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  ::selection{background:var(--amber);color:var(--bg)}
+
+  /* film grain */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* ---------- nav ---------- */
+  nav{position:sticky;top:0;z-index:60;background:rgba(17,18,20,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+  .logo{font-family:var(--serif);font-weight:700;font-size:1.15rem;letter-spacing:.02em;display:flex;align-items:center;white-space:nowrap}
+  .rec{display:inline-flex;align-items:center;gap:7px;margin-left:14px}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--rec);animation:blink 1.4s infinite;flex:none}
+  @keyframes blink{50%{opacity:.2}}
+  .links{display:flex;gap:26px;align-items:center}
+  .links a{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s;position:relative;padding:4px 0}
+  .links a:hover,.links a.active{color:var(--ink)}
+  .links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--amber)}
+  .links .nav-cta{color:var(--bg);background:var(--amber);padding:8px 14px}
+  .links .nav-cta:hover{color:var(--bg);background:var(--ink)}
+  .links .nav-cta.active::after{display:none}
+  .burger{display:none;background:none;border:1px solid var(--line);width:42px;height:42px;cursor:pointer;position:relative}
+  .burger span,.burger span::before,.burger span::after{position:absolute;left:11px;width:18px;height:1.5px;background:var(--ink);transition:transform .25s,opacity .25s;content:""}
+  .burger span{top:20px}.burger span::before{top:-6px;left:0}.burger span::after{top:6px;left:0}
+  .burger[aria-expanded="true"] span{background:transparent}
+  .burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+  .burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:80px 0 90px;position:relative;overflow:hidden}
+  .frame{position:absolute;inset:32px 24px;border:1px solid var(--line);pointer-events:none}
+  .frame::before,.frame::after{content:"";position:absolute;width:22px;height:22px;border-color:var(--amber);border-style:solid}
+  .frame::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+  .frame::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+  .hero-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:46px}
+  #tc{color:var(--amber);font-variant-numeric:tabular-nums}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+  .status{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 12px;border:1px solid rgba(123,196,127,.35);background:rgba(123,196,127,.07);border-radius:999px;font-size:.85rem;color:var(--ok);margin-bottom:26px}
+  .status i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(123,196,127,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(123,196,127,0)}100%{box-shadow:0 0 0 0 rgba(123,196,127,0)}}
+  h1{font-family:var(--serif);font-weight:300;font-size:clamp(3.2rem,9vw,7.4rem);line-height:.92;letter-spacing:-.02em}
+  h1 b{font-weight:700;display:block}
+  h1 i{font-style:italic;color:var(--amber);font-weight:300}
+  .tagline{max-width:540px;margin-top:30px;font-size:1.15rem;color:var(--muted)}
+  .tagline strong{color:var(--ink);font-weight:500}
+  .cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;border-radius:2px;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:14px 22px;border:1px solid var(--ink);transition:all .2s;cursor:pointer;background:none;color:var(--ink)}
+  .btn.primary{background:var(--ink);color:var(--bg)}
+  .btn:hover{background:var(--amber);border-color:var(--amber);color:var(--bg)}
+  .btn svg{width:15px;height:15px;flex:none}
+
+  /* portrait in a camera viewfinder */
+  .viewfinder{position:relative;aspect-ratio:4/5;max-width:460px;width:100%;justify-self:end}
+  .viewfinder .shot{position:absolute;inset:0;overflow:hidden;background:linear-gradient(160deg,#2b2d31,#141518 70%)}
+  .viewfinder .shot::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(to top,rgba(10,11,12,.85),transparent);pointer-events:none}
+  .viewfinder img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:20px}
+  .placeholder .mono-initials{font-family:var(--serif);font-size:7rem;font-weight:300;font-style:italic;color:var(--amber);line-height:1}
+  .placeholder small{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .vf-corner{position:absolute;width:24px;height:24px;border-color:rgba(238,236,232,.85);border-style:solid;z-index:2}
+  .vf-corner.tl{top:12px;left:12px;border-width:2px 0 0 2px}
+  .vf-corner.tr{top:12px;right:12px;border-width:2px 2px 0 0}
+  
+  
+  .vf-name{position:absolute;left:22px;bottom:18px;z-index:2;display:flex;flex-direction:column;gap:2px}
+  .vf-name span{font-family:var(--serif);font-size:1.35rem;font-weight:500}
+  .vf-name small{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+  .vf-top .r{display:flex;align-items:center;gap:6px}
+  .vf-hud{position:absolute;left:22px;right:22px;bottom:22px;display:flex;justify-content:space-between;z-index:2;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--ink);text-shadow:0 1px 6px rgba(0,0,0,.8)}
+  .vf-hud .r{display:flex;align-items:center;gap:6px}
+  .vf-top{position:absolute;left:22px;right:22px;top:22px;display:flex;justify-content:space-between;z-index:2;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--ink);text-shadow:0 1px 6px rgba(0,0,0,.8)}
+  .vf-focus{position:absolute;top:50%;left:50%;width:60px;height:44px;transform:translate(-50%,-50%);border:1px solid rgba(233,178,90,.7);z-index:2;pointer-events:none}
+  .viewfinder.has-photo .vf-focus{top:34%}
+  /* playful bits */
+  .viewfinder{--mx:0;--my:0}
+  .tilt{position:absolute;inset:0;transform:perspective(900px) rotateY(calc(var(--mx)*7deg)) rotateX(calc(var(--my)*-7deg));transition:transform .25s ease-out;z-index:1}
+  .vf-back{position:absolute;inset:0;border:1.5px solid var(--amber);border-radius:4px;transform:translate(calc(18px + var(--mx)*-12px),calc(18px + var(--my)*-12px));transition:transform .25s ease-out}
+  .vf-back::after{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--amber) 1px,transparent 1.5px);background-size:14px 14px;opacity:.22;-webkit-mask-image:linear-gradient(135deg,transparent 55%,#000);mask-image:linear-gradient(135deg,transparent 55%,#000)}
+  .viewfinder .shot{border-radius:4px}
+  .sticker{position:absolute;z-index:3;transform:translate(calc(var(--mx)*16px),calc(var(--my)*16px));transition:transform .25s ease-out}
+  .sticker span{display:inline-block;font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.04em;padding:9px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.45);animation:bob 4s ease-in-out infinite;white-space:nowrap;cursor:default;transition:scale .2s}
+  .sticker span:hover{scale:1.12}
+  .s1{top:14%;left:-38px}.s1 span{background:var(--amber);color:#1a1408;rotate:-7deg}
+  .s2{top:44%;right:-30px}.s2 span{background:var(--ink);color:var(--bg);rotate:6deg;animation-delay:-1.3s}
+  .s3{top:70%;left:-26px}.s3 span{background:var(--rec);color:#fff;rotate:-4deg;animation-delay:-2.6s}
+  @keyframes bob{50%{translate:0 -8px}}
+  .badge{position:absolute;right:-44px;bottom:-40px;width:116px;height:116px;z-index:4;display:grid;place-items:center;border-radius:50%;background:var(--bg);border:1px solid var(--line);transition:transform .3s}
+  .badge:hover{transform:scale(1.08) rotate(-8deg)}
+  .badge svg{position:absolute;inset:0;animation:spin 16s linear infinite}
+  .badge text{font-family:var(--mono);font-size:10.5px;letter-spacing:3.2px;fill:var(--ink);text-transform:uppercase}
+  .badge .face{font-family:var(--serif);font-size:2.2rem;line-height:1;color:var(--amber);transition:transform .3s}
+  .badge:hover .face{transform:rotate(45deg)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hi{display:block;font-family:var(--serif);font-style:italic;font-weight:300;font-size:1.5rem;color:var(--muted);margin-bottom:6px}
+  .wave{display:inline-block;transform-origin:70% 70%;animation:wave 2.4s ease-in-out infinite}
+  @keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%{transform:rotate(-8deg)}40%{transform:rotate(-4deg)}50%{transform:rotate(10deg)}}
+  h1 i{display:inline-block;animation:hop 2.8s ease-in-out infinite}
+  @keyframes hop{0%,70%,100%{transform:none}80%{transform:translateY(-.18em)}90%{transform:translateY(.02em)}}
+
+  /* quick facts bar (recruiter at-a-glance) */
+  .glance{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-top:64px;background:var(--bg)}
+  .glance div{padding:20px 22px;border-right:1px solid var(--line)}
+  .glance div:last-child{border-right:none}
+  .glance strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.3rem;margin-top:4px}
+
+  /* ---------- strip ---------- */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;white-space:nowrap;padding:14px 0}
+  .strip-inner{display:inline-block;animation:scroll 40s linear infinite}
+  .strip span{font-family:var(--serif);font-size:1.6rem;font-style:italic;margin:0 26px;color:var(--muted)}
+  .strip span.sep{color:var(--rec);font-style:normal;margin:0}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------- sections ---------- */
+  section{padding:100px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:50px;flex-wrap:wrap}
+  .sec-head .mono{color:var(--amber)}
+  .sec-head p{flex-basis:100%;color:var(--muted);max-width:560px;margin-top:6px}
+  h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.01em;line-height:1.1}
+
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start}
+  .about-grid p.lead{font-family:var(--serif);font-size:1.55rem;line-height:1.45;font-weight:300}
+  .about-grid p.lead em{color:var(--amber)}
+  .about-grid p.sub{color:var(--muted);margin-top:22px;max-width:560px}
+  .facts{border:1px solid var(--line)}
+  .facts div{display:flex;justify-content:space-between;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line)}
+  .facts div:last-child{border-bottom:none}
+  .facts span:last-child{text-align:right}
+
+  /* craft */
+  .craft{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .card{background:var(--bg);padding:34px 28px;transition:background .25s;position:relative}
+  .card::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--amber);transition:width .4s}
+  .card:hover::after{width:100%}
+  .card:hover{background:var(--bg2)}
+  .card .num{font-family:var(--mono);font-size:.75rem;color:var(--rec)}
+  .card h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;margin:14px 0 10px}
+  .card p{color:var(--muted);font-size:.95rem}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .tags span{font-family:var(--mono);font-size:.72rem;padding:5px 10px;border:1px solid var(--line);color:var(--ink)}
+  .soft{margin-top:40px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .soft .mono{margin-right:8px}
+  .soft span.pill{padding:8px 16px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);font-size:.9rem}
+
+  /* timeline */
+  .clip{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:34px 0;border-top:1px solid var(--line)}
+  .clip:last-child{border-bottom:1px solid var(--line)}
+  .clip .meta .mono{display:block;margin-bottom:6px}
+  .clip .meta .now{color:var(--rec);display:inline-flex !important;align-items:center;gap:6px}
+  .clip h3{font-family:var(--serif);font-weight:500;font-size:1.7rem;line-height:1.2}
+  .clip .role{color:var(--amber);margin:4px 0 12px;font-size:.95rem}
+  .clip .desc{color:var(--muted);max-width:620px;margin-bottom:14px;font-size:.97rem}
+  .clip ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .clip li{font-size:.86rem;padding:6px 12px;background:var(--bg2);border:1px solid var(--line)}
+
+  /* edu */
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .edu-grid h3{font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:10px;font-weight:500}
+  .row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .row strong{font-family:var(--serif);font-weight:500;font-size:1.2rem}
+
+  /* ---------- contact ---------- */
+  #contact{border-bottom:none}
+  .contact-head{text-align:center;margin-bottom:56px}
+  .contact-head h2{font-size:clamp(2.6rem,8vw,5.2rem);font-weight:300;line-height:1;margin-top:18px}
+  .contact-head h2 i{color:var(--amber)}
+  .contact-head p{color:var(--muted);margin:22px auto 0;max-width:520px}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:28px;align-items:start}
+  .channels{display:flex;flex-direction:column;gap:12px}
+  .channel{display:flex;align-items:center;gap:16px;border:1px solid var(--line);padding:18px 20px;transition:border-color .2s,background .2s;background:var(--bg)}
+  a.channel:hover{border-color:var(--amber);background:var(--bg2)}
+  .channel .ico{width:40px;height:40px;border:1px solid var(--line);display:grid;place-items:center;flex:none;color:var(--amber)}
+  .channel .ico svg{width:18px;height:18px}
+  .channel .txt{flex:1;min-width:0}
+  .channel .txt .mono{display:block;font-size:.7rem;margin-bottom:2px}
+  .channel .txt span:last-child{display:block;overflow-wrap:anywhere}
+  .copy{background:none;border:1px solid var(--line);color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;cursor:pointer;transition:all .2s;flex:none}
+  .copy:hover{border-color:var(--amber);color:var(--amber)}
+
+  form{border:1px solid var(--line);padding:30px;background:var(--bg2)}
+  .form-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:12px;flex-wrap:wrap}
+  .form-top .mono{color:var(--amber)}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{display:flex;flex-direction:column;gap:7px}
+  .field.full{grid-column:1/-1}
+  label{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:13px 14px;transition:border-color .2s;width:100%;border-radius:0;-webkit-appearance:none;appearance:none}
+  select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23a69a8a' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+  textarea{min-height:130px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--amber)}
+  .field.err input,.field.err textarea{border-color:var(--rec)}
+  .field .msg{font-size:.78rem;color:var(--rec);min-height:0}
+  .send-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;align-items:center}
+  .send-row .hint{font-size:.82rem;color:var(--muted);flex-basis:100%;margin-top:4px}
+  .btn.wa{border-color:#2a9d5c}
+  .btn.wa:hover{background:#2a9d5c;border-color:#2a9d5c;color:#fff}
+
+  /* toast */
+  .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);background:var(--ink);color:var(--bg);padding:12px 20px;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;opacity:0;pointer-events:none;transition:all .3s;z-index:200;max-width:calc(100% - 32px);text-align:center}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  /* back to top */
+  .totop{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border:1px solid var(--line);background:rgba(17,18,20,.9);color:var(--ink);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .3s,border-color .2s;z-index:55}
+  .totop.show{opacity:1;pointer-events:auto}
+  .totop:hover{border-color:var(--amber);color:var(--amber)}
+
+  footer{padding:30px 0;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .viewfinder{justify-self:center;max-width:380px;margin:10px 0 30px}
+    .glance{grid-template-columns:repeat(2,1fr)}
+    .glance div:nth-child(2){border-right:none}
+    .glance div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .contact-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:820px){
+    .burger{display:block}
+    .links{position:fixed;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);transform:translateY(-120%);transition:transform .3s;padding:8px 0}
+    .links.open{transform:none}
+    .links a{padding:16px 24px;font-size:.85rem;border-bottom:1px solid var(--line)}
+    .links a:last-child{border-bottom:none}
+    .links a.active::after{display:none}
+    .links .nav-cta{margin:12px 24px 8px;text-align:center}
+    .about-grid,.edu-grid{grid-template-columns:1fr;gap:40px}
+    .craft{grid-template-columns:1fr}
+    .clip{grid-template-columns:1fr;gap:10px}
+    .frame{inset:16px 12px}
+    .hero{padding:56px 0 70px}
+    section{padding:72px 0}
+    .fields{grid-template-columns:1fr}
+    form{padding:22px}
+  }
+  @media (max-width:480px){
+    .wrap{padding:0 16px}
+    .rec{display:none}
+    .glance{grid-template-columns:1fr}
+    .glance div{border-right:none;border-bottom:1px solid var(--line)}
+    .glance div:last-child{border-bottom:none}
+    .btn{flex:1;justify-content:center}
+    .viewfinder{max-width:100%}
+    .vf-back{transform:translate(10px,10px)}
+    .s1{left:-6px}.s2{right:-6px}.s3{left:-6px}
+    .badge{right:-4px;bottom:-30px;width:96px;height:96px}
+    .badge .face{font-size:1.5rem}
+  }
+  /* ---- responsive fixes ---- */
+  @media (max-width:1200px){
+    .hero .wrap{padding:0 56px}
+    .badge{right:-18px}
+    .s2{right:-14px}
+  }
+  @media (max-width:820px){
+    .hero .wrap{padding:0 34px}
+    .frame{inset:14px 12px}
+  }
+  @media (max-width:480px){
+    .hero .wrap{padding:0 28px}
+    .status{font-size:.78rem;padding:6px 12px 6px 10px}
+    .cta .btn,.send-row .btn{flex:1 1 100%;justify-content:center;white-space:nowrap}
+    .channel{padding:16px;gap:12px}
+    .channel .ico{display:none}
+    .channel .txt span:last-child{font-size:.9rem}
+    .copy{padding:6px 8px}
+    .contact-head h2{font-size:2.5rem}
+    .s3{top:56%}
+  }
+  @media (max-width:400px){
+    .channel .txt span:last-child{font-size:.82rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none !important;transition:none !important}
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">Sanjeev Shakya<span class="rec mono"><span class="dot"></span>Rec</span></a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+    <div class="links" id="menu">
+      <a href="#about">About</a>
+      <a href="#craft">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact" class="nav-cta">Hire me</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="frame"></div>
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="mono">Scene 01 — Introduction</span>
+      <span class="mono" id="tc">00:00:00:00</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <span class="status"><i></i>Open to work — full-time, internship &amp; freelance</span>
+        <span class="hi">Hi, I'm <span class="wave" aria-hidden="true">👋</span></span>
+        <h1>Sanjeev<b>Shakya<i>.</i></b></h1>
+        <p class="tagline"><strong>Video editor, photographer &amp; designer</strong> from Bhaktapur, Nepal. I turn raw footage, photos and ideas into visuals people remember.</p>
+        <div class="cta">
+          <a href="#contact" class="btn primary">Get in touch</a>
+          <a href="Sanjeev_Shakya_CV.pdf" class="btn" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <!-- PHOTO: save his picture as "sanjeev.jpg" in this folder and it appears here automatically -->
+      <div class="viewfinder reveal" id="vf">
+        <div class="vf-back" aria-hidden="true"></div>
+        <div class="tilt">
+        <div class="shot">
+          <img src="sanjeev.jpg" alt="Portrait of Sanjeev Shakya" id="portrait" hidden>
+          <div class="placeholder" id="ph">
+            <span class="mono-initials">SS</span>
+            <small>Photo coming soon</small>
+          </div>
+        </div>
+        <span class="vf-corner tl"></span><span class="vf-corner tr"></span>
+                <div class="vf-top"><span class="r"><span class="dot"></span>REC</span><span>4K · 25P</span></div>
+        <div class="vf-name"><span>Sanjeev Shakya</span><small>Video · Photo · Design</small></div>
+        </div>
+        <div class="sticker s1" aria-hidden="true"><span>🎬 Edit</span></div>
+        <div class="sticker s2" aria-hidden="true"><span>📷 Shoot</span></div>
+        <div class="sticker s3" aria-hidden="true"><span>🎨 Design</span></div>
+        <a href="#contact" class="badge" aria-label="Get in touch">
+          <svg viewBox="0 0 116 116" aria-hidden="true"><defs><path id="circ" d="M58,58 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text><textPath href="#circ">Let's create together •</textPath></text></svg>
+          <span class="face" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="glance reveal">
+      <div><span class="mono">Based in</span><strong>Bhaktapur, NP</strong></div>
+      <div><span class="mono">Core tools</span><strong>Premiere · AE · DaVinci</strong></div>
+      <div><span class="mono">Currently</span><strong>Multimedia @ OLE</strong></div>
+      <div><span class="mono">Available</span><strong style="color:var(--ok)">Open to work</strong></div>
+    </div>
+  </div>
+</header>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip-inner">
+    <span>Video Editing</span><span class="sep">●</span><span>Photography</span><span class="sep">●</span><span>Motion Graphics</span><span class="sep">●</span><span>Graphic Design</span><span class="sep">●</span><span>Audio</span><span class="sep">●</span><span>Multimedia</span><span class="sep">●</span>
+    <span>Video Editing</span><span class="sep">●</span><span>Photography</span><span class="sep">●</span><span>Motion Graphics</span><span class="sep">●</span><span>Graphic Design</span><span class="sep">●</span><span>Audio</span><span class="sep">●</span><span>Multimedia</span><span class="sep">●</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="mono">01</span><h2>About me</h2></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="lead">I'm a motivated, hard-working creator with a strong <em>willingness to learn</em> and grow. Friendly and easy to work with, I communicate clearly and enjoy being part of a team.</p>
+        <p class="sub">My path runs from the shop floor to the edit suite: sales and customer handling taught me what people respond to, and hands-on work in videography, editing and photography taught me how to show it. I'm currently doing multimedia work at Open Learning Exchange while looking for my next role in a professional creative team.</p>
+      </div>
+      <div class="facts reveal">
+        <div><span class="mono">Based in</span><span>Bekhal, Bhaktapur</span></div>
+        <div><span class="mono">Focus</span><span>Video, photo &amp; design</span></div>
+        <div><span class="mono">Currently</span><span>Multimedia at OLE</span></div>
+        <div><span class="mono">Status</span><span style="color:var(--ok)">Open to opportunities</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="craft">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="mono">02</span><h2>What I do</h2><p>Three crafts, one goal: content that looks good and gets the message across.</p></div>
+    <div class="craft">
+      <div class="card reveal">
+        <span class="num">// 01</span>
+        <h3>Video &amp; Motion</h3>
+        <p>Shooting and cutting footage into clear, engaging stories, from the edit and colour to motion graphics and sound.</p>
+        <div class="tags"><span>Premiere Pro</span><span>After Effects</span><span>DaVinci Resolve</span><span>Audio</span></div>
+      </div>
+      <div class="card reveal">
+        <span class="num">// 02</span>
+        <h3>Photography</h3>
+        <p>Capturing people, products and moments, then retouching the shots so they're ready to post or print.</p>
+        <div class="tags"><span>Photography</span><span>Photoshop</span><span>Videography</span></div>
+      </div>
+      <div class="card reveal">
+        <span class="num">// 03</span>
+        <h3>Design</h3>
+        <p>Social posts, thumbnails, graphics and simple layouts that look clean and stay on brand.</p>
+        <div class="tags"><span>Figma</span><span>Canva</span><span>Illustrator</span><span>Photoshop</span></div>
+      </div>
+    </div>
+    <div class="soft reveal">
+      <span class="mono">Also good at</span>
+      <span class="pill">Fast-paced environments</span>
+      <span class="pill">Teamwork &amp; communication</span>
+      <span class="pill">Quick learner</span>
+      <span class="pill">Attention to detail</span>
+      <span class="pill">Multitasking</span>
+      <span class="pill">Sales &amp; negotiation</span>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="mono">03</span><h2>Experience</h2></div>
+    <div class="timeline">
+      <div class="clip reveal">
+        <div class="meta">
+          <span class="mono now"><span class="dot"></span>Current</span>
+          <span class="mono">Clip 03</span>
+        </div>
+        <div>
+          <h3>Open Learning Exchange (OLE)</h3>
+          <p class="role">Multimedia</p>
+          <p class="desc">Currently working in multimedia, building hands-on experience in a professional environment.</p>
+          <ul><li>Multimedia</li><li>Ongoing</li></ul>
+        </div>
+      </div>
+      <div class="clip reveal">
+        <div class="meta">
+          <span class="mono">Baudha</span>
+          <span class="mono">Clip 02</span>
+        </div>
+        <div>
+          <h3>Termatree</h3>
+          <p class="role">Video &amp; Media</p>
+          <p class="desc">Shot and edited video in Premiere Pro, prepared images in Photoshop and supported content research.</p>
+          <ul><li>Videography</li><li>Video editing</li><li>Premiere Pro</li><li>Photoshop</li><li>Research</li></ul>
+        </div>
+      </div>
+      <div class="clip reveal">
+        <div class="meta">
+          <span class="mono">Khauma, Bhaktapur</span>
+          <span class="mono">Clip 01</span>
+        </div>
+        <div>
+          <h3>Ratnayan Jyasa Pasa</h3>
+          <p class="role">Sales Representative — Gold Shop</p>
+          <p class="desc">Sales for a gold and jewellery shop: handling customers, negotiating prices and marketing.</p>
+          <ul><li>Sales &amp; marketing</li><li>Price negotiation</li><li>Customer handling</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="mono">04</span><h2>Education &amp; training</h2></div>
+    <div class="edu-grid">
+      <div class="reveal">
+        <h3>Education</h3>
+        <div class="row"><strong>Chanakya College of Management</strong><span class="mono">+2</span></div>
+        <div class="row"><strong>Shree Padhma Secondary School</strong><span class="mono">SEE</span></div>
+      </div>
+      <div class="reveal">
+        <h3>Training</h3>
+        <div class="row"><strong>Photography</strong><span class="mono">Certificate</span></div>
+        <div class="row"><strong>Basic Computer</strong><span class="mono">Certificate</span></div>
+        <div class="row"><strong>Barista</strong><span class="mono">Certificate</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-head">
+      <span class="mono reveal" style="color:var(--amber)">05 — Final cut</span>
+      <h2 class="reveal">Let's make<br>something <i>together.</i></h2>
+      <p class="reveal">Hiring, a freelance shoot or an edit you need done? Send a message and I'll get back to you soon.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="channels reveal">
+        <a class="channel" href="mailto:sanjeevshakya120@gmail.com">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg></span>
+          <span class="txt"><span class="mono">Email</span><span>sanjeevshakya120@gmail.com</span></span>
+          <button class="copy" type="button" data-copy="sanjeevshakya120@gmail.com">Copy</button>
+        </a>
+        <a class="channel" href="tel:+9779843633140">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg></span>
+          <span class="txt"><span class="mono">Phone</span><span>+977 984-3633140</span></span>
+          <button class="copy" type="button" data-copy="+9779843633140">Copy</button>
+        </a>
+        <a class="channel" href="https://wa.me/9779843633140?text=Hi%20Sanjeev%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-3.9A8 8 0 1120 12a8 8 0 01-11.9 7z"/><path d="M9 9.5c.3 2 2.2 4.3 5 5.3l1.2-1.2"/></svg></span>
+          <span class="txt"><span class="mono">WhatsApp</span><span>Chat directly</span></span>
+        </a>
+        <div class="channel">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+          <span class="txt"><span class="mono">Location</span><span>Bekhal, Bhaktapur, Nepal</span></span>
+        </div>
+      </div>
+
+      <form id="contactForm" class="reveal" novalidate>
+        <div class="form-top"><span class="mono">New message</span><span class="mono" id="charCount">0 / 1000</span></div>
+        <div class="fields">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Full name" required>
+            <span class="msg"></span>
+          </div>
+          <div class="field">
+            <label for="email">Your email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
+            <span class="msg"></span>
+          </div>
+          <div class="field full">
+            <label for="topic">What's it about?</label>
+            <select id="topic" name="topic">
+              <option>Job opportunity</option>
+              <option>Internship</option>
+              <option>Freelance video project</option>
+              <option>Photography shoot</option>
+              <option>Design work</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" maxlength="1000" placeholder="Tell me a little about the role or project..." required></textarea>
+            <span class="msg"></span>
+          </div>
+        </div>
+        <div class="send-row">
+          <button type="submit" class="btn primary" data-via="email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l16-8-6 16-3-7z"/></svg>
+            Send by email
+          </button>
+          <button type="submit" class="btn wa" data-via="whatsapp">Send on WhatsApp</button>
+          <span class="hint">Your message opens ready to send in your email app or WhatsApp.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">© <span id="yr"></span> Sanjeev Shakya</span>
+    <span class="mono">That's a wrap ●</span>
+  </div>
+</footer>
+
+<a href="#top" class="totop" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5m0 0l-6 6m6-6l6 6"/></svg>
+</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var EMAIL = 'sanjeevshakya120@gmail.com';
+  var WHATSAPP = '9779843633140';
+
+  // ---- photo: show sanjeev.jpg if present, keep initials placeholder if not
+  var img = document.getElementById('portrait'), ph = document.getElementById('ph'), vf = document.getElementById('vf');
+  function showPhoto(){ img.hidden = false; ph.style.display = 'none'; vf.classList.add('has-photo'); }
+  img.addEventListener('load', showPhoto);
+  if (img.complete && img.naturalWidth) showPhoto();
+
+  // ---- playful tilt: photo follows the mouse (desktop only)
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var hero = document.querySelector('.hero');
+  if (!reduce && fine && hero) {
+    hero.addEventListener('mousemove', function(e){
+      var r = vf.getBoundingClientRect();
+      var x = (e.clientX - (r.left + r.width/2)) / (window.innerWidth/2);
+      var y = (e.clientY - (r.top + r.height/2)) / (window.innerHeight/2);
+      vf.style.setProperty('--mx', Math.max(-1, Math.min(1, x)).toFixed(3));
+      vf.style.setProperty('--my', Math.max(-1, Math.min(1, y)).toFixed(3));
+    });
+    hero.addEventListener('mouseleave', function(){ vf.style.setProperty('--mx', 0); vf.style.setProperty('--my', 0); });
+  }
+
+  // ---- running timecode
+  var tc = document.getElementById('tc'), start = Date.now();
+  function pad(n){ return String(n).padStart(2,'0'); }
+  setInterval(function(){
+    var ms = Date.now() - start, s = Math.floor(ms/1000);
+    tc.textContent = pad(Math.floor(s/3600))+':'+pad(Math.floor(s/60)%60)+':'+pad(s%60)+':'+pad(Math.floor((ms%1000)/40));
+  }, 40);
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ---- mobile menu
+  var burger = document.querySelector('.burger'), menu = document.getElementById('menu');
+  function setMenu(open){ menu.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); }
+  burger.addEventListener('click', function(){ setMenu(!menu.classList.contains('open')); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+
+  // ---- reveal on scroll
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    // highlight current section in nav
+    var navLinks = document.querySelectorAll('.links a');
+    var spy = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){
+        navLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#'+e.target.id); });
+      }});
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    document.querySelectorAll('section[id]').forEach(function(s){ spy.observe(s); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // ---- back to top
+  var totop = document.querySelector('.totop');
+  window.addEventListener('scroll', function(){ totop.classList.toggle('show', window.scrollY > 700); }, {passive:true});
+
+  // ---- toast
+  var toast = document.getElementById('toast'), tt;
+  function say(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('show'); }, 2600); }
+
+  // ---- copy buttons
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      var v = b.getAttribute('data-copy');
+      function done(){ b.textContent = 'Copied'; say('Copied: ' + v); setTimeout(function(){ b.textContent = 'Copy'; }, 1800); }
+      if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(v).then(done, fallback); } else { fallback(); }
+      function fallback(){ var t = document.createElement('textarea'); t.value = v; t.style.position='fixed'; t.style.opacity='0'; document.body.appendChild(t); t.select(); try{ document.execCommand('copy'); done(); }catch(_){ say(v); } document.body.removeChild(t); }
+    });
+  });
+
+  // ---- contact form
+  var form = document.getElementById('contactForm');
+  var msgEl = document.getElementById('message'), count = document.getElementById('charCount');
+  msgEl.addEventListener('input', function(){ count.textContent = msgEl.value.length + ' / 1000'; });
+
+  function setErr(input, text){
+    var f = input.closest('.field'); f.classList.toggle('err', !!text);
+    f.querySelector('.msg').textContent = text || '';
+  }
+  ['name','email','message'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', function(){ setErr(this, ''); });
+  });
+
+  function validate(){
+    var ok = true, n = form.name, em = form.email, m = form.message;
+    if (n.value.trim().length < 2){ setErr(n, 'Please enter your name.'); ok = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim())){ setErr(em, 'Please enter a valid email.'); ok = false; }
+    if (m.value.trim().length < 10){ setErr(m, 'A few more words, please (10+ characters).'); ok = false; }
+    if (!ok){ var first = form.querySelector('.field.err input, .field.err textarea'); if (first) first.focus(); }
+    return ok;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!validate()) { say('Please fix the highlighted fields'); return; }
+    var via = (e.submitter && e.submitter.getAttribute('data-via')) || 'email';
+    var name = form.name.value.trim(), from = form.email.value.trim(), topic = form.topic.value, body = form.message.value.trim();
+
+    if (via === 'whatsapp') {
+      var text = 'Hi Sanjeev, I\'m ' + name + ' (' + from + ').\nTopic: ' + topic + '\n\n' + body;
+      window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+      say('Opening WhatsApp…');
+    } else {
+      var subject = topic + ' — from ' + name;
+      var mail = 'Hi Sanjeev,\n\n' + body + '\n\n—\n' + name + '\n' + from;
+      window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(mail);
+      say('Opening your email app…');
+    }
+  });
+})();
+</script>
+</body>
+</html>
